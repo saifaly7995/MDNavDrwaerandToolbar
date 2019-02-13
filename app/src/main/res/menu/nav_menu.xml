@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+    <item
+        android:id="@+id/navmenu_item1"
+        android:title="Inbox"
+        android:icon="@drawable/ic_inbox"
+        />
+    <item
+        android:id="@+id/navmenu_item2"
+        android:title="Starred"
+        android:icon="@drawable/ic_star"
+        />
+    <item
+        android:id="@+id/navmenu_item3"
+        android:title="Inbox"
+        android:icon="@drawable/ic_draft"
+        />
+    </group>
+
+    <item android:title="Subheader">
+        <menu>
+            <item
+                android:id="@+id/navmenu_item4"
+                android:title="Inbox"
+                android:icon="@drawable/ic_inbox"
+                />
+            <item
+                android:id="@+id/navmenu_item5"
+                android:title="Starred"
+                android:icon="@drawable/ic_star"
+                />
+
+        </menu>
+    </item>
+</menu>

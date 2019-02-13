@@ -1,5 +1,8 @@
 package com.ed.iu.saif.materialdesignnavdrawerwithtoolbar;
 
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,14 +13,29 @@ import android.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //toolbar work here
         toolbar=(android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //          it works only when nav drawer toggle is erased
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //drawer toggle work here
+        drawerLayout=(DrawerLayout)findViewById(R.id.drawerlayout);
+        navigationView=(NavigationView)findViewById(R.id.navview);
+
+        ActionBarDrawerToggle actionBarDrawerToggl= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer,R.string.closeDrawer);
+        drawerLayout.setDrawerListener(actionBarDrawerToggl);
+        actionBarDrawerToggl.syncState();
+
+
     }
 
     //Pop Menu Work here
